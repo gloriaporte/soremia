@@ -1,0 +1,130 @@
+/* Variáveis CSS */
+
+:root {
+    --lilac: rgb(165,154,186);
+    --grey: rgb(100,98,161);
+    --tellurite: rgb(67,145,161);
+    --ice: rgb(156,187,205);
+    --mustard: rgb(207,160,72);
+    --gold: rgb(238,202,82);
+    --grayish: rgb(185,182,203);
+    --purple: rgb(140,144,179);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* -------------------------------------------------------- */
+
+/* Páginas com template (main, game, etc) */
+
+
+body.wrapper {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    grid-template-areas: 
+    "header"
+    "principal"
+    "footer";
+}
+
+/* Cabeçalho/header */
+
+header{
+    grid-area: header;
+    padding: 2rem;
+    background-color: var(--lilac);
+} 
+
+/*  Container principal */
+.container-main {
+    grid-area: principal;
+    display: flex;
+}
+
+/* Menu */
+
+nav {
+    width: 15vw;
+    padding: 2rem;
+}
+
+/* Conteúdo principal */
+main {
+    height: 100vh;
+    width: 80rem;
+    padding: 1rem;
+}
+
+.scenery, .char-container {
+    width: 100%;
+}
+
+.scenery {
+    height: 100%;
+    background: url("../teste/cenario.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-color: #ddd;
+    contain: content;
+}
+
+.char-container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: space-around;
+}
+
+.char {
+    height: 100%;
+    margin-top: 20rem;
+    transform: scale(1.5);
+}
+
+.bubble-container {
+    position: absolute;
+    display: flex;
+    left: 50rem;
+    top: 10rem;
+    z-index: 1;
+}
+
+#bubble {
+    width: 25rem;
+    padding: 1.2rem;
+    flex-wrap: wrap;
+    background: #fff;
+    position: relative;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    word-wrap: break-word;
+  }
+  #bubble:before {
+    content: "";
+    position: absolute;
+    right: 98%;
+    top: 1.8rem;
+    width: 0;
+    height: 0;
+    border-top: 13px solid transparent;
+    border-right: 26px solid #fff;
+    border-bottom: 13px solid transparent;
+  }
+
+
+/*  Rodapé/footer */
+footer {
+    grid-area: footer;
+    padding: 2rem;
+    background-color: var(--lilac);
+}
+
