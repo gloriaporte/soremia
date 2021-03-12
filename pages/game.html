@@ -27,34 +27,59 @@
            <h1>Projeto Soremia</h1>
         </header>
         <div class="container-main">
-            <nav>
-                <!-- A ideia do menu é ter o nome do usuário, nível/ep atual e logout-->
-                <span>Nome de  usuário</span>
-                <span>Nível/Episódio</span>
-                <ul>
-                    <li><a href="main.html">Início</a></li>
-                    <li><a href="game.html">Jogar</a></li>
-                    <li><a href="chapters.html">Capítulos</a></li>
-                    <li><a href="characters.html">Personagens</a></li>
-                    <li><a href="gallery.html">Galeria</a></li>
-                    <li><a href="logout.html">Sair</a></li>
-                </ul>
-            </nav>
+            <div>
+                <button onclick="closeMenu();">Fechar</button>
+                    <button onclick="openMenu();">Abrir</button>
+                <div >
+                    
+                    <nav id="menu">
+                        <span>Nome de  usuário</span>
+                    <span>Nível/Episódio</span>
+                        <!-- A ideia do menu é ter o nome do usuário, nível/ep atual e logout--> 
+                        <ul>
+                            <li><a href="main.html">Início</a></li>
+                            <li><a href="game.html">Jogar</a></li>
+                            <li><a href="chapters.html">Capítulos</a></li>
+                            <li><a href="characters.html">Personagens</a></li>
+                            <li><a href="gallery.html">Galeria</a></li>
+                            <li><a href="logout.html">Sair</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
             <main>
                 <!-- tela de jogo -->
-                <section class="scenery">
-                         <!-- falas -->
-                         <div class="bubble-container">
-                            <p id="bubble">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
-                        </div>
-                    <!-- personagem -->
-                     <div class="char-container">
-                        <img src="../teste/personagem.png" alt="" class="char">
-                     </div>
-               
-                    <!-- botões -->
-                    <div></div>
+                <section id="cenario" class="scenery">
                 
+                    <!-- narração -->
+                    <div class="story-container" id="tela-narrativa">
+                        <span id="txt-narrativo" class="story">Desestabilizou as oportunidades dos pretos, pardos, miscigenados, indígenas e autonomia da pauta coletiva feminista. Eu não permitirei isso.</span>
+                    </div>
+
+                    <!-- botões -->
+                    <div class="buttons-container">
+                        <button id="btn-a"><span class="txt-btn-a">Oie</span></button>
+                        <button id="btn-b"><span class="txt-btn-b">(Sair)</span></button>
+                        <button id="btn-c"><span class="txt-btn-c">(Continuar)</span></button>
+                    </div>
+
+                    <!-- falas -->
+                    <div class="bubble-container">
+                        <div class="bubble-box" id="bubble">
+                            <span id="txt-balao"> Convocado ao desejo de se autosabotar se aproveitando de uma pauta.</p>
+                        </div>
+                    </div>
+
+
+                    <!-- personagem -->
+                    <div class="char-container">
+                        <img src="../teste/personagem.png" id="img-personagem-1" class="char">
+                        <img src="../teste/personagem.png" id="img-personagem-2" class="char">
+                        <img src="../teste/personagem.png" id="img-personagem-3" class="char">
+                        <img src="../teste/personagem.png" id="img-personagem-4" class="char">
+                        <img src="../teste/personagem.png" id="img-personagem-5" class="char">
+                    </div>
+                    <!-- cenário -->
                 </section>
             </main>
         </div>
@@ -63,9 +88,11 @@
         </footer>
 
     <!-- Adicionar scripts AQUI  -->
-    <script src="js/site/bootstrap.min.js"></script>
+    <script src="../js/site/bootstrap.min.js"></script>
+    <script src="../js/openMenu.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/b22f8c461a.js" crossorigin="anonymous"></script>
 
 </body>
 </html> 
