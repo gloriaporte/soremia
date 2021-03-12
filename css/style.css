@@ -19,18 +19,6 @@
 
 /* -------------------------------------------------------- */
 
-/* Páginas com template (main, game, etc) */
-
-
-body.wrapper {
-    display: grid;
-    grid-template-columns: auto;
-    grid-template-rows: auto;
-    grid-template-areas: 
-    "header"
-    "principal"
-    "footer";
-}
 
 /* Cabeçalho/header */
 
@@ -49,22 +37,62 @@ header{
 /* Menu */
 
 nav {
+    position: absolute;
     width: 15vw;
-    padding: 2rem;
+    height: 0;
+    top: 8rem;
+    left: 1.8rem;
+    background: var(--tellurite);
+    transition: 0.5s;
+    overflow: hidden;
+}
+
+nav span {
+    height: 0;
+}
+
+nav ul li {
+    padding: 10px 0;
+}
+
+nav ul {
+    padding: 8px 0;
+    list-style: none;
+}
+
+nav ul li a{
+    margin: 0 10px;
+    transition: 0.3;
+}
+
+nav ul {
+    background: var(--tellurite);
+    padding: 8px 0;
+    list-style: none;
+}
+
+nav ul li a{
+    margin: 0 10px;
 }
 
 /* Conteúdo principal */
 main {
     height: 100vh;
-    width: 80rem;
+    width: 100rem;
     padding: 1rem;
+    text-align: center;
+    display: flex;
+    margin-left: 5rem;
+    justify-content: center;
 }
 
-.scenery, .char-container {
-    width: 100%;
-}
+
+
+/* Parte da tela do jogo game.html */
+
 
 .scenery {
+    width: 70vw;
     height: 100%;
     background: url("../teste/cenario.png");
     background-repeat: no-repeat;
@@ -74,13 +102,75 @@ main {
     contain: content;
 }
 
+
+.story-container {
+    background-color:crimson;
+    margin: 1rem;
+    padding: 1rem;
+    border-radius: 6px;
+}
+
+
+.buttons-container {
+    position: absolute;
+    z-index: 7;
+    left: 0;
+    bottom: 0rem;
+    margin: 1rem;
+    display: flexbox;
+    flex-direction: row;
+    width: 96%;
+}
+
+.buttons-container button {
+    width: 100%;
+    margin: 2px 0;
+    padding: 4px 10px;
+    text-align: left;
+    background: blueviolet;
+}
+
+
+
+/* Balão de fala */
+.bubble-container {
+    position: absolute;
+    width: 17rem;
+    display: flex;
+    left: 34rem;
+    top: 6rem;
+    z-index: 4;
+}
+
+#bubble {
+    max-width: 25rem;
+    padding: 3rem;
+    flex-wrap: wrap;
+    background: #fff;
+    position: relative;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    word-wrap: break-word;
+    
+  }
+
+  #bubble:before {
+    content: "";
+    position: absolute;
+    bottom: 1rem;
+    right: 14rem;
+    height: 25px;
+    width: 30px;
+    border-radius: 80px 100px 100px 160px;
+    box-shadow: 14px 10px 0 0 rgb(255, 255, 255);
+  }
+
+
 .char-container {
     width: 100%;
     height: 100vh;
-    display: flex;
-    flex-direction: row;
-    align-items: baseline;
-    justify-content: space-around;
+    display: inline;
 }
 
 .char {
@@ -89,37 +179,38 @@ main {
     transform: scale(1.5);
 }
 
-.bubble-container {
-    position: absolute;
-    display: flex;
-    left: 50rem;
-    top: 10rem;
+#img-personagem-1 {
+    /* position: absolute; */
     z-index: 1;
 }
 
-#bubble {
-    width: 25rem;
-    padding: 1.2rem;
-    flex-wrap: wrap;
-    background: #fff;
-    position: relative;
-    -moz-border-radius: 10px;
-    -webkit-border-radius: 10px;
-    border-radius: 10px;
-    word-wrap: break-word;
-  }
-  #bubble:before {
-    content: "";
+#img-personagem-2 {
+    margin-top: calc(20rem - 2.5rem);
     position: absolute;
-    right: 98%;
-    top: 1.8rem;
-    width: 0;
-    height: 0;
-    border-top: 13px solid transparent;
-    border-right: 26px solid #fff;
-    border-bottom: 13px solid transparent;
-  }
+    left: 6rem;
+    z-index: -2;
+}
 
+#img-personagem-3 {
+    margin-top: calc(20rem - 2.5rem);
+    position: absolute;
+    right: 6rem;
+    z-index: -3;
+}
+
+#img-personagem-4 {
+    margin-top: calc(20rem - 5rem);
+    position: absolute;
+    left: 30rem;
+    z-index: -4;
+}
+
+#img-personagem-5 {
+    margin-top: calc(20rem - 5rem);
+    position: absolute;
+    right: 30rem;
+    z-index: -5;
+}
 
 /*  Rodapé/footer */
 footer {
