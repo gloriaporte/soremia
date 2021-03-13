@@ -6,6 +6,10 @@
 
     <!-- Título do site -->
     <title>Projeto Soremia</title>
+    
+    <!-- Javascrip -->
+    <script type="text/javascript" src="../js/funcPlay.js"></script>
+    <script type="text/javascript" src="../js/arrayGame.js"></script>
 
     <!-- META TAGS for SEO -> Search Engine, elas servem para que facilite a busca do nosso site. Futuramente adicionarei
     mais meta tags.  -->
@@ -19,6 +23,8 @@
     <!-- Adicionar folhas de estilo/css AQUI -->
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/style.css">
+
+
 </head>
 <body>
 
@@ -53,31 +59,31 @@
                 
                     <!-- narração -->
                     <div class="story-container" id="tela-narrativa">
-                        <span id="txt-narrativo" class="story">Desestabilizou as oportunidades dos pretos, pardos, miscigenados, indígenas e autonomia da pauta coletiva feminista. Eu não permitirei isso.</span>
+                        <span id="txt-narrativo" class="story"></span>
                     </div>
 
                     <!-- botões -->
                     <div class="buttons-container">
-                        <button id="btn-a"><span class="txt-btn-a">Oie</span></button>
-                        <button id="btn-b"><span class="txt-btn-b">(Sair)</span></button>
-                        <button id="btn-c"><span class="txt-btn-c">(Continuar)</span></button>
+                        <button id="btn-a" onclick="btnOpcaoA()"><span class="txt-btn-a">Start</span></button>
+                        <button id="btn-b" onclick="btnOpcaoB()"><span class="txt-btn-b"></span></button>
+                        <button id="btn-c" onclick="btnOpcaoC()"><span class="txt-btn-c"></span></button>
                     </div>
 
                     <!-- falas -->
                     <div class="bubble-container">
                         <div class="bubble-box" id="bubble">
-                            <span id="txt-balao"> Convocado ao desejo de se autosabotar se aproveitando de uma pauta.</p>
+                            <span id="txt-balao"></p>
                         </div>
                     </div>
 
 
                     <!-- personagem -->
                     <div class="char-container">
-                        <img src="../teste/personagem.png" id="img-personagem-1" class="char">
-                        <img src="../teste/personagem.png" id="img-personagem-2" class="char">
-                        <img src="../teste/personagem.png" id="img-personagem-3" class="char">
-                        <img src="../teste/personagem.png" id="img-personagem-4" class="char">
-                        <img src="../teste/personagem.png" id="img-personagem-5" class="char">
+                        <img src="" id="img-personagem-1" class="char">
+                        <img src="" id="img-personagem-2" class="char">
+                        <img src="" id="img-personagem-3" class="char">
+                        <img src="" id="img-personagem-4" class="char">
+                        <img src="" id="img-personagem-5" class="char">
                     </div>
                     <!-- cenário -->
                 </section>
