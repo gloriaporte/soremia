@@ -24,11 +24,11 @@
 * funções para preenchimento das arrays serão de acordo com capitulo
 */
 
-var matCenario = [
+var matCenarios = [
 	[1,"https://i.ibb.co/d5qbSm4/Quarto-Aelyn.png"],
-	[2,""],
-	[3,""],
-	[4,""]
+	[2,"../teste/cenario.png"],
+	[3,"../teste/cenario.png"],
+	[4,"https://i.ibb.co/d5qbSm4/Quarto-Aelyn.png"]
 ];
     //[indice, cenario]
 	
@@ -42,20 +42,20 @@ var matPersonagens = [
 	
 var matHistoria = [
 	[1,1,0,1,0],
-	[2,1,1,2,3],
+	[2,4,1,2,3],
 	[3,1,1,3,0],
-	[4,1,1,4,0],
+	[4,4,1,4,0],
 	[5,1,1,5,0],
-	[6,1,2,6,0],
+	[6,4,2,6,0],
 	[7,1,2,7,0],
-	[8,1,3,8,0],
+	[8,4,3,8,0],
 	[9,1,3,9,0],
-	[10,1,3,10,0],
+	[10,4,3,10,0],
 	[11,1,0,11,0],
-	[12,1,0,1,2],
+	[12,4,0,1,2],
 	[13,1,0,12,0],
-	[14,1,0,16,1],
-	[15,1,0,13,0],
+	[14,null,null,16,1],
+	[15,4,0,13,0],
 	[16,1,0,14,0],
 	[17,null,null,null,null]
 ];

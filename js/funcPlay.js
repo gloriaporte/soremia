@@ -1,19 +1,16 @@
 /***********************
 ***Funcitions Play***
-* Versão: 1.0
+* Versão: 2.1
 * Autor: Samira - 2020
 * Coral Otome Gama
 ***********************/
 
 /*
 * Sobre:
-* Funcões padrões do jogo (usada em todos capitulos)
+* Funções padrões do jogo (usada em todos capítulos)
 * Observações:
-* variaveis a declarar: indice, afinidades
-* id do botão está no texto
+* variaveis a declarar: indice, afinidades (código próprio)
 * indice de mudança de rota no texto
-* !!!CÓDIGO NÃO TESTADO!!!
-* pontos de afeto apenas recebe e não faz cauculo
 */
 
 //temporário
@@ -33,6 +30,7 @@ var img2;
 var comportamento;
 var estilo;
 var btnsAtivo = false;
+//var c;
 
 //alert("ok");
 window.onload = function(){
@@ -41,9 +39,9 @@ window.onload = function(){
 
 function gamePlay(){
     if(indice==0){indice++;}
-    for(i=0;i<=matHistoria.length;i++){
-        if(indice==matHistoria[i][0]){
-            comportamento = matHistoria[i][4];
+    for(c=0;c<=matHistoria.length;c++){
+        if(indice==matHistoria[c][0]){
+            comportamento = matHistoria[c][4];
             if(comportamento == null){
                 fimDeJogo();
                 return 0;
@@ -52,23 +50,23 @@ function gamePlay(){
 				switch(comportamento){
                     case 0://rota padrão
                         carregamentoPadrão();
-                        iPersonagem = matHistoria[i][2];
+                        iPersonagem = matHistoria[c][2];
                         selecionarPersonagem(iPersonagem);
                         document.getElementById('img-personagem-1').style.display = '';  
 						document.getElementById("img-personagem-1").src = img2;
                         indice++;
                         break;
                     case 1://retornar rota padrão
-                        indice = matHistoria[i][3];
+                        indice = matHistoria[c][3];
                         gamePlay(indice);
                         break;
                     case 2: //Abrir opições (ativar botões)
-                        iButton = matHistoria[i][3];
+                        iButton = matHistoria[c][3];
                         selecionarBtn(iButton);
                         break;
                     case 3: //multiplos personagens
                         carregamentoPadrão();
-                        iMultPersonagens = matHistoria[i][2];
+                        iMultPersonagens = matHistoria[c][2];
                         selecionalPersonagens();
                         indice++;
                         break;
@@ -83,14 +81,13 @@ function gamePlay(){
 
 function carregamentoPadrão(){
     desabilitarAll();
-    //erro na matriz
-    /*
-    iCenario = matHistoria[i][1];                 
+    //código sem erro, porem não funciona
+    iCenario = matHistoria[c][1];
     selecionarCenario(iCenario);
-    document.getElementsByClassName(container-main).background = img;
-    document.getElementById("cenario").src = img;
-    */
-    iTexto = matHistoria[i][3];
+    let cenario = document.getElementById("cenario");
+    cenario.style.background.src = img;
+    cenario.style.background.url = img;
+    iTexto = matHistoria[c][3];
     formatarTexto(iTexto);
 }
 
@@ -107,7 +104,7 @@ function desabilitarAll(){
 }
 
 function formatarTexto(iTexto){
-	for(i=0;i<=matTexto.length;i++){
+	for(let i=0;i<=matTexto.length;i++){
         if(iTexto==matTexto[i][0]){
 			txtOpcaoA = matTexto[i][1];
             estilo = matTexto[i][2];
@@ -131,17 +128,16 @@ function formatarTexto(iTexto){
 }//definir exibição de texto
 
 function selecionarCenario(iCenario){
-    for(i=0;i<=matCenario.length;i++){
+    for(let i=0;i<=matCenarios.length;i++){
         if(iCenario==matCenarios[i][0]){
             img = matCenarios[i][1];
-            alert("img");
             break;
         }
     }
 }//Selecionar cenario na matCenario
 
 function selecionarPersonagem(iPersonagem){
-    for(i=0;i<=matPersonagens.length;i++){
+    for(let i=0;i<=matPersonagens.length;i++){
         if(matPersonagens[i][0]==iPersonagem){
             img2 = matPersonagens[i][1];
             break;
@@ -150,7 +146,7 @@ function selecionarPersonagem(iPersonagem){
 }//Selecionar personagem na matPersonagens
 
 function selecionarBtn(iButton){
-    for(i=0;i<=matBtnTexto.length;i++){
+    for(let i=0;i<=matBtnTexto.length;i++){
         if(iButton == matBtnTexto[i][0]){
             txtOpcaoA = matBtnTexto[i][1];
 			document.getElementById('btn-a').innerText = txtOpcaoA;
@@ -171,13 +167,18 @@ function selecionarBtn(iButton){
 }//ativar botões
 
 function selecionalPersonagens(){
-    for(i=0;i<=matMultPersonagens.length;i++){
+    for(let i=0;i<=matMultPersonagens.length;i++){
         if(iMultPersonagens == matMultPersonagens[i][0]){
             iPersonagem = matMultPersonagens[i][1];
             habilitarPersonagem1(iPersonagem);
-            //iPersonagem = matMultPersonagens[i][2];
-            //alert(matMultPersonagens[i][2]);
-            //habilitarPersonagem2(iPersonagem);
+            iPersonagem = matMultPersonagens[i][2];
+            habilitarPersonagem2(iPersonagem);
+            iPersonagem = matMultPersonagens[i][3];
+            habilitarPersonagem3(iPersonagem);
+            iPersonagem = matMultPersonagens[i][4];
+            habilitarPersonagem4(iPersonagem);
+            iPersonagem = matMultPersonagens[i][5];
+            habilitarPersonagem5(iPersonagem);
             break;
         }//if - multPersonagens
     }//for - percorrar matMultPersonagens
@@ -191,11 +192,34 @@ function habilitarPersonagem1(){
     }//personagem 1
 }
 function habilitarPersonagem2(){
-    alert("ok");
     if(iPersonagem!=null){
         selecionarPersonagem(iPersonagem);
         document.getElementById('img-personagem-2').style.display = '';  
         document.getElementById("img-personagem-2").src = img2;
+    }//personagem 2
+}
+
+function habilitarPersonagem3(){
+    if(iPersonagem!=null){
+        selecionarPersonagem(iPersonagem);
+        document.getElementById('img-personagem-3').style.display = '';  
+        document.getElementById("img-personagem-3").src = img2;
+    }//personagem 3
+}
+
+function habilitarPersonagem4(){
+    if(iPersonagem!=null){
+        selecionarPersonagem(iPersonagem);
+        document.getElementById('img-personagem-4').style.display = '';  
+        document.getElementById("img-personagem-4").src = img2;
+    }//personagem 4
+}
+
+function habilitarPersonagem5(){
+    if(iPersonagem!=null){
+        selecionarPersonagem(iPersonagem);
+        document.getElementById('img-personagem-5').style.display = '';  
+        document.getElementById("img-personagem-5").src = img2;
     }//personagem 1
 }
     
@@ -207,7 +231,7 @@ function recebeBtn(alt){
 }
 
 function selecionarRota(iButton,alt){
-    for(i=0;i<=matRotaPonteiro.length;i++){
+    for(let i=0;i<=matRotaPonteiro.length;i++){
         if(matRotaPonteiro[i][0]==iButton){
             indice = matRotaPonteiro[i][alt];
             return 0;
@@ -216,7 +240,7 @@ function selecionarRota(iButton,alt){
 }//mudar indice de rota
 
 function calcularAfeto(iButton,alt){
-    for(i=0;i<=matPontosAfeto.length;i++){
+    for(let i=0;i<=matPontosAfeto.length;i++){
         if(matPontosAfeto[i][0]==iButton){
 
             pontos = pontos + matPontosAfeto[i][alt];
