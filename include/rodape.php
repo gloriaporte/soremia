@@ -1,6 +1,6 @@
 
 <!-- Esse arquivo contém o rodapé e quaisquer scripts gerais que serão utilizados nas PÁGINAS. Se for utilizar
-um script em apenas UMA PÁGINA, adicione na própria página e não aqui. -->
+um script em apenas UMA PÁGINA, adicione na própria página e não aqui... -->
 
 <footer>
             Rodapé
