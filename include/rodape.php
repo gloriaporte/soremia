@@ -1,3 +1,4 @@
+
 <!-- Esse arquivo contém o rodapé e quaisquer scripts gerais que serão utilizados nas PÁGINAS. Se for utilizar
 um script em apenas UMA PÁGINA, adicione na própria página e não aqui. -->
 
@@ -6,6 +7,7 @@ um script em apenas UMA PÁGINA, adicione na própria página e não aqui. -->
         </footer>
 
     <!-- Adicionar scripts AQUI  -->
+
     <script src="../js/site/bootstrap.min.js"></script>
     <script src="../js/openMenu.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
