@@ -84,9 +84,8 @@ function carregamentoPadrão(){
     //código sem erro, porem não funciona
     iCenario = matHistoria[c][1];
     selecionarCenario(iCenario);
-    let cenario = document.getElementById("cenario");
-    cenario.style.background.src = img;
-    cenario.style.background.url = img;
+    let cenario = document.getElementsByClassName("scenery");
+    cenario.style.backgroundImage.src = "https://i.ibb.co/d5qbSm4/Quarto-Aelyn.png";
     iTexto = matHistoria[c][3];
     formatarTexto(iTexto);
 }

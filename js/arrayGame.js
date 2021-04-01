@@ -1,6 +1,6 @@
 /***********************
 ***Arrays Game***
-* Versão: 1.0
+* Versão: 1.1
 * Autor: Samira - 2020
 * Coral Otome Gama
 ***********************/
@@ -25,10 +25,10 @@
 */
 
 var matCenarios = [
-	[1,"https://i.ibb.co/d5qbSm4/Quarto-Aelyn.png"],
-	[2,"../teste/cenario.png"],
-	[3,"../teste/cenario.png"],
-	[4,"https://i.ibb.co/d5qbSm4/Quarto-Aelyn.png"]
+	[1,'"https://i.ibb.co/d5qbSm4/Quarto-Aelyn.png"'],
+	[2,'"../teste/cenario.png"'],
+	[3,'"../teste/cenario.png"'],
+	[4,'"https://i.ibb.co/d5qbSm4/Quarto-Aelyn.png"']
 ];
     //[indice, cenario]
 	
@@ -92,7 +92,7 @@ var matRotaPonteiro = [
 	//[indice, opcaoA, opcaoB, opcaoC]
 
 matMultPersonagens = [
-	[1,3,2,1,null,null],
+	[1,3,null,null,2,1],
 	[2,null,null,null,null,null]
 ];
 	//[indice, per1, per2, per3, per4, per5]
