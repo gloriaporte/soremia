@@ -24,6 +24,13 @@
 * funções para preenchimento das arrays serão de acordo com capitulo
 */
 
+var matBaloesDeFala = [
+	[1, "M202,43 q-157,-6 -144,79 q14,58 129,55 q-23,48.5 -46,47 q36,4.5 72,-49 q235,10 232,-67 q10,-70 -131,-65 Z"],//Balão grande
+	[2, "M92,43 q-137,-7 -140,79 q0,58 99,55 q-33,58.5 -56,47 q36,12 72,-49 q95,10 100,-67 q1,-60 -70,-65 Z"],//balão médio
+	[3, "M152,13 q-87,-2 -70,79 q20,45 69,55 q-3,48.5 -30,47 q25,12 46,-49 q55,-10 55,-67 q0,-50 -60,-63 Z"]//Balão pequeno
+];
+//[índice, atributo da forma do balão]
+
 var matCenario = [
 	[1,"https://i.ibb.co/d5qbSm4/Quarto-Aelyn.png"],
 	[2,""],
@@ -51,7 +58,7 @@ var matHistoria = [
 	[8,1,3,8,0],
 	[9,1,3,9,0],
 	[10,1,3,10,0],
-	[11,1,0,11,0],
+	[11,1,3,11,0],
 	[12,1,0,1,2],
 	[13,1,0,12,0],
 	[14,1,0,16,1],
@@ -62,22 +69,23 @@ var matHistoria = [
     //[indice, cenario, personagem, texto, comportamento]
 	
 var matTexto = [
-	[1,"Bem vindo a Soremia.",1],
-	[2,"Oh! As personagens!",0],
-	[3,"Aqui está Aelyn.",1],
-	[4,"Diga ola para Aelyn!",1],
-	[5,"Olá Alelyn!",0],
-	[6,"Esta Yerin.",1],
-	[7,"Oi Yerin",0],
-	[8,"E esta é Cherry",1],
-	[9,"Como você é fota!",0],
-	[10,"Obrigada!",2],
-	[11,"Você está gostando?",1],
-	[12,"Que bom!",1],
-	[13,"Que pena!",1],
-	[14,"Obrigado pelo teste, até mais!",1]
+	[1,"Bem vindo a Soremia.",1, 0],
+	[2,"Obrigada! SKKSAOSAKASOKOSAOKASKOSAKOSAKOASKOASKOSAOSAASK OLHA SÓ ESSE TESTE", 2, 1],
+	[3,"Oh! As personagens!",0, 0],
+	[4,"Aqui está Aelyn.",1, 0],
+	[5,"Diga ola para Aelyn!",1, 0],
+	[6,"Olá Alelyn!",0, 0],
+	[7,"Esta Yerin.",1, 0],
+	[8,"Oi Yerin",0, 0],
+	[9,"E esta é Cherry",1, 0],
+	[10,"Como você é fofa!",0, 0],
+	[11,"Obrigada!",2, 3],
+	[12,"Você está gostando?",1, 0],
+	[13,"Que bom!",1, 0],
+	[14,"Que pena!",1, 0],
+	[15,"Obrigado pelo teste, até mais!",1, 0]
 ];
-	//[indice, texto, estilo]
+	//[indice, texto, estilo, balao]
 
 var matBtnTexto = [
 	[1,"sim","não",null],

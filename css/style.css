@@ -3,6 +3,7 @@
 
 /* Variáveis de cor */
 :root {
+    /* Variáveis de cor gerais */
     --lilac: rgb(165,154,186);
     --grey: rgb(100,98,161);
     --tellurite: rgb(67,145,161);
@@ -13,12 +14,18 @@
     --pinkie-rgba: rgba(165,154, 186, 0.5);
     --purple: rgb(178, 140, 179);
     --snow: rgba(235, 218, 238, 0.7);
-    --story: linear-gradient(90deg, rgb(61, 41, 61) 10%, rgba(91, 72, 136, 0.6) 100%);
+    /* Variável de cor do balão de narração */
+    --story: linear-gradient(90deg, rgba(39, 96, 107, 0.9) 10%, rgba(91, 72, 136, 0.6) 100%);
+    /* Variável de cor dos botões de opção */
     --button: linear-gradient(90deg, hsla(253, 51%, 32%, 0.767) 20%, rgba(247, 121, 180, 0.466) 100%);
+    /* Variável de cor dos botões de cor quando passa o mouse por cima */
+    --button-shine: linear-gradient(90deg, hsla(212, 30%, 32%, 0.767) 20%, rgba(121, 247, 169, 0.466) 100%);
+    /* Variavel de cor  do menu */
     --menu:  linear-gradient(180deg, rgb(67, 145, 161) 0%, rgba(96, 60, 179, 0.788) 100%);
-    --menu-box:  linear-gradient(180deg, rgba(96, 60, 179, 0.788) 100%,  rgb(67, 145, 161) 0%);
-    --header: linear-gradient(90deg, rgba(100,98,161,1) 0%, rgba(165,154,186,1) 100%);
-    --footer: linear-gradient(0deg, rgb(65, 63, 119) 0%, rgba(165,154,186,1) 100%);
+    /* Variável de cor do cabeçalho */
+    --header: linear-gradient(0deg, rgb(255, 193, 226) 0%, rgb(123, 153, 253) 100%);
+    /* Variável de cor do rodapé */
+    --footer: linear-gradient(0deg, rgb(65, 63, 119) 0%, rgb(255, 193, 226) 100%);
 }
 
 /* Sem bordas e margens geral */
@@ -34,32 +41,26 @@
 
 /*--- Cabeçalho/header ---*/
 header.header-logo{
-    padding: 1rem;
-    /* background-color: var(--grey); */
+    padding: 1vw;
     background: var(--header);
 } 
 
-header.header-logo img {
-    margin-left: 1rem;
-}
-
 /*---  Container principal ---*/
 .container-main {
-    grid-area: principal;
     display: flex;
 }
 
+/*------------------------------------------------ Menu -------------------------------------------*/
 
-
-/*--- Menu ---*/
-
+/* Botões do menu */
 .menu-buttons {
-    width: 15vw;
+    width: 10vw;
     height: 1rem;
     display: inline-flex;
     justify-content: space-between;
 }
 
+/* Cabeçalho do menu (onde fica infos do usuário) */
 .menu-header{
     display: inline-flex;
     width: 15vw;
@@ -67,12 +68,14 @@ header.header-logo img {
     flex-direction: row;
 }
 
+/* Informações do usuário */
 .user-info{
     width: 100%;
     margin: 3rem 0 1rem 0;
     text-align: center;
 }
 
+/* Nome do usuário */
 .user-name {
     font-weight: 700;
     color: rgb(205, 248, 255);
@@ -80,6 +83,7 @@ header.header-logo img {
     width: 100%;
 }
 
+/* Nível do usuário */
 .user-lvl {
     color: rgb(205, 248, 255);
     width: 100%;
@@ -88,7 +92,7 @@ header.header-logo img {
 }
 
 
-
+/* Botões do menu */
 button.menu-button {
     color: var(--lilac);
     background-color: transparent;
@@ -96,16 +100,19 @@ button.menu-button {
     padding: 0.2;
 }
 
+/* Botão de barra pra abrir o menu */
 button.menu-button.open {
-    margin: 1.6rem 0 0 2rem;
+    margin: 2rem 0 0 2rem;
     color: var(--mustard);
 }
 
+/* Botão pra fechar o menu */
 .button-close-content {
     width: 10%;
     text-align: right;
 }
 
+/* Botão pra fechar  o menu */
 button.menu-button.close {
     position: absolute;
     right: 0.3rem;
@@ -113,7 +120,7 @@ button.menu-button.close {
 
 }
 
-
+/* Menu  */
 nav#menu {
     position: absolute;
     width: 15vw;
@@ -127,12 +134,7 @@ nav#menu {
     overflow: hidden;
     /* border: var(--mustard) 1px solid; */
 }
-/* 
-.menu-box {
-    margin: 1px;
-    background: var(--menu);
-} */
-
+ 
 
 nav#menu span {
     height: 0;
@@ -174,10 +176,26 @@ nav ul li a{
     font-family: Arial, Helvetica, sans-serif;
 }
 
+/* O botao do menu dropdown tem de sumir quando a tela tiver mais de 1150pixels  */
+@media (min-width: 1150px) {
+    #show {
+        display: none;
+    }
+}
+
+/* O menu lateral tem de sumir qd a tela tiver menos de 1150 pixels */
+@media (max-width: 1150px) {
+    .menu-open {
+        display: none;
+    }
+}
+
+/*------------------------------------------------------------------------------------------------*/
+
 /* Conteúdo principal */
 main {
     min-height: 35vw;
-    width: 100rem;
+    width: 100vw;
     padding: 1rem;
     text-align: center;
     display: flex;
@@ -185,6 +203,13 @@ main {
     justify-content: center;
 }
 
+@media (max-width: 1150px) {
+    main {
+        min-height: 60vw;
+        margin: 0;
+        width: 100vw;
+    }
+}
 
 
 /* Parte da tela do jogo game.html */
@@ -193,8 +218,19 @@ main {
     width: 75vw;
     height: 40vw;
     contain: content;
+    object-fit: cover;
 }
 
+@media (max-width: 1150px) {
+    .game-container {
+        width: 100vw;
+        height: 50vh;
+        margin: 0;
+    }
+}
+
+
+/* Imagem do fundo */
 .scenery img {
     position: absolute;
     z-index: -2;
@@ -203,12 +239,13 @@ main {
     top: 0;
 }
 
-
+/* Barra de narração */
 .story-container {
     position: absolute;
     width: 97%;
-    background: var(--story);
-    box-shadow: rgba(203, 243, 255, 0.705) 0px 0px 7px 1px;
+    border:  solid 1px hsla(59, 28%, 47%, 0.486);
+    background: var(--button-shine);
+    box-shadow: hsla(12, 87%, 24%, 0.767) 0 0 12px 0px;
     font-weight: 540;
     font-size: 1.1rem;
     color: var(--snow);
@@ -217,6 +254,7 @@ main {
     padding: 1rem;
     border-radius: 6px;
 }
+
 
 
 .buttons-container {
@@ -232,7 +270,7 @@ main {
 
 .buttons-container button {
     width: 100%;
-    margin: 1rem 0 0 0;
+    margin: 0.4rem 0 0 0;
     padding: 8px 10px;
     text-align: left;
     background: var(--button);
@@ -243,6 +281,14 @@ main {
     border-radius: 0.3rem;
 }
 
+.buttons-container button:hover {
+    transform: scale(1.01);
+    border: solid 1px hsla(184, 76%, 64%, 0.486);
+    box-shadow: hsla(249, 67%, 48%, 0.822) 0 0 12px 0px;
+    transition: all 0.4s ease-in-out;
+
+}
+
 button:focus {
     border: solid 1px hsla(286, 41%, 54%, 0.336);
     outline: none;
@@ -250,7 +296,7 @@ button:focus {
  
 
 
-/* Balão de fala */
+/* Balão de fala */     
 .bubble-container {
     position: absolute;
     width: 17rem;
@@ -260,31 +306,27 @@ button:focus {
     z-index: 4;
 }
 
-#bubble {
-    border: rgb(26, 26, 26) 2px solid;
-    max-width: 25rem;
+#falas {
+    /* border: rgb(26, 26, 26) 2px solid; */
+    left: 45px;
+    max-width: 28vw;
     padding: 3rem;
     flex-wrap: wrap;
-    background: rgba(255, 255,255, 0.6);
-    position: relative;
+    /* background: rgba(255, 255,255, 0.6); */
+    position: absolute;
     -moz-border-radius: 50%;
     -webkit-border-radius: 50%;
     border-radius: 50%;
     word-wrap: break-word;
-    
+    z-index: 3; 
   }
 
-  /* #bubble:before {
-    content: "";
-    position: absolute;
-    bottom: 1rem;
-    right: 14rem;
-    height: 25px;
-    width: 30px;
-    border-radius: 80px 100px 100px 160px;
-    box-shadow: 14px 10px 0 0 rgb(255, 255, 255);
-  } */
-
+  svg {
+      position: absolute;
+      left: -10%;
+      top: -20px;
+      z-index: 2;
+  }
 
 .char-container {
     width: 100%;
@@ -333,6 +375,7 @@ button:focus {
 
 /*  Rodapé/footer */
 footer { 
+    bottom: 0;
     text-align: center;
     padding: 2rem 0 0 0;
     background: var(--footer);
@@ -353,7 +396,12 @@ footer ul li a {
 }
 
 footer ul li a i {
-    color: #7fafbb;
+    color: #BEB0CE;
+}
+
+
+footer small {
+    font-weight: 600;
 }
 
 footer div {
@@ -364,18 +412,18 @@ footer div {
 
 .fb:hover {
     transition: all 0.3s;
-    color: #00349b;
+    color: #0047b3;
     transform: rotate(360deg) scale(1.5);
 }
 
 .site:hover {
     transition: all 0.3s;
-    color: #df046a;
+    color: #ff499e;
     transform: rotate(360deg) scale(1.5);
 }
 
 .twt:hover {
     transition: all 0.4s;
-    color: #00c3ff;
+    color: #00a2ff;
     transform: rotate(360deg) scale(1.5);
 }

@@ -28,11 +28,13 @@
     <!-- Cabeçalho  -->
     <header class="header-logo">
         <!-- Logo -->
-        <img src="../imgs/logov2.png" alt="Projeto Soremia" height="45px">
+        <img src="../imgs/logo-word.png" alt="Projeto Soremia" height="45px">
+        <button id="show" class="menu-button show" onclick="showMenu();"><i id="show-icon" class="fas fa-bars fa-2x"></i></button>
     </header>
 
     <!-- Container geral -->
     <div class="container-main">
+      <div class="menu-open">
         <!-- Botões pra abrir/fechar  menu -->
         <div class="menu-buttons">
             <button id="open" class="menu-button open" onclick="openMenu();"><i id="open-icon" class="fas fa-bars fa-2x"></i></button>
@@ -49,7 +51,7 @@
                   <!-- Botão p fechar -->
                   <div class="button-close-content">
                     <button id="close" class="menu-button close" onclick="closeMenu();"><i id="close-icon" class="fas fa-times fa-2x"></i></button>
-                </div>
+                  </div>
                 </div>
                 <!-- Menu links -->
                 <ul>
@@ -63,3 +65,4 @@
                     <li><a href="logout.html">Sair</a></li>
                 </ul>
         </nav>
+</div>

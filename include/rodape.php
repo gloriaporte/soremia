@@ -1,10 +1,10 @@
 <footer>
     <section>
-        <img src="../imgs/seahorsebase.png" alt="Projeto Soremia" width="60px">
+        <img src="../imgs/seahorse2.png" alt="Projeto Soremia" width="60px">
         <ul class="social">
-                <li><a href="https://projetosoremia.blogspot.com/"><i class="site fas fa-globe fa-2x"></i></a></li>
-                <li><a href="https://www.facebook.com/CoralOtomeGame"><i class="fb fab fa-facebook fa-2x"></i> </a></li>
-                <li><a href="https://twitter.com/CoralOtomeGame"><i class="twt fab fa-twitter fa-2x"></i></a></li>
+                <li><a href="https://projetosoremia.blogspot.com/" title="Site do Coral Otome Game"><i class="site fas fa-globe fa-2x"></i></a></li>
+                <li><a href="https://www.facebook.com/CoralOtomeGame" title="Facebook do Coral Otome Game"><i class="fb fab fa-facebook fa-2x"></i> </a></li>
+                <li><a href="https://twitter.com/CoralOtomeGame" title="Twitter do Coral Otome Game"><i class="twt fab fa-twitter fa-2x"></i></a></li>
         </ul>
     </section>
     <div>
