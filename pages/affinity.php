@@ -1,7 +1,7 @@
 <?php include('../include/menu.php');?>
 
       <main>
-            Conteúdo principal da página
+            Conteúdo principal da página teste afinidade
         </main>
         </div>
 
