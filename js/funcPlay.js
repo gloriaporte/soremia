@@ -17,6 +17,7 @@
 var indice = 1;
 var pontos=0;
 
+var balaoDeFala; //Variável do desenho do balão de fala
 var iCenario;
 var iPersonagem;
 var iTexto;
@@ -99,7 +100,7 @@ function desabilitarAll(){
     document.getElementById('img-personagem-2').style.display = 'none';
     document.getElementById('img-personagem-1').style.display = 'none';
     document.getElementById('tela-narrativa').style.display = 'none';
-    document.getElementById('bubble').style.display = 'none';
+    document.getElementById('bubblecontainer').style.display = 'none';
 }
 
 function formatarTexto(iTexto){
@@ -107,6 +108,7 @@ function formatarTexto(iTexto){
         if(iTexto==matTexto[i][0]){
 			txtOpcaoA = matTexto[i][1];
             estilo = matTexto[i][2];
+            balaoDeFala = matTexto[i][3];
             switch(estilo){
 				case 0: //padrão
                     document.getElementById('btn-a').innerText = txtOpcaoA;
@@ -117,9 +119,20 @@ function formatarTexto(iTexto){
 					document.getElementById('btn-a').innerText = "(Continuar...)";
 					break;
                 case 2://dialogo
-                    document.getElementById('bubble').style.display = '';
-					document.getElementById('bubble').innerText = txtOpcaoA;
+                if(balaoDeFala == 1) {
+                    var path = document.getElementById('balao');
+                    path.setAttribute("d", matBaloesDeFala[0][1]);
+                } else if(balaoDeFala == 2) {
+                    var path = document.getElementById('balao');
+                    path.setAttribute("d", matBaloesDeFala[1][1]);
+                } else if (balaoDeFala == 3){
+                    var path = document.getElementById('balao');
+                    path.setAttribute("d", matBaloesDeFala[2][1]);
+                }
+                    document.getElementById('bubblecontainer').style.display = '';
+					document.getElementById('falas').innerText = txtOpcaoA;
 					document.getElementById('btn-a').innerText = "(Continuar...)";
+                    
 			}
 			break;
 		}//formato

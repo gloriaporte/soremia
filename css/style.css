@@ -1,84 +1,201 @@
-/* Variáveis CSS */
+/* Variáveis CSS ou geral */
 
+
+/* Variáveis de cor */
 :root {
+    /* Variáveis de cor gerais */
     --lilac: rgb(165,154,186);
     --grey: rgb(100,98,161);
     --tellurite: rgb(67,145,161);
     --ice: rgb(156,187,205);
-    --mustard: rgb(207,160,72);
+    --mustard: rgb(179, 137, 60);
     --gold: rgb(238,202,82);
-    --grayish: rgb(185,182,203);
-    --purple: rgb(140,144,179);
+    --pinkie: rgb(255, 128, 206);
+    --pinkie-rgba: rgba(165,154, 186, 0.5);
+    --purple: rgb(178, 140, 179);
+    --snow: rgba(235, 218, 238, 0.7);
+    /* Variável de cor do balão de narração */
+    --story: linear-gradient(90deg, rgba(39, 96, 107, 0.9) 10%, rgba(91, 72, 136, 0.6) 100%);
+    /* Variável de cor dos botões de opção */
+    --button: linear-gradient(90deg, hsla(253, 51%, 32%, 0.767) 20%, rgba(247, 121, 180, 0.466) 100%);
+    /* Variável de cor dos botões de cor quando passa o mouse por cima */
+    --button-shine: linear-gradient(90deg, hsla(212, 30%, 32%, 0.767) 20%, rgba(121, 247, 169, 0.466) 100%);
+    /* Variavel de cor  do menu */
+    --menu:  linear-gradient(180deg, rgb(67, 145, 161) 0%, rgba(96, 60, 179, 0.788) 100%);
+    /* Variável de cor do cabeçalho */
+    --header: linear-gradient(0deg, rgb(255, 193, 226) 0%, rgb(123, 153, 253) 100%);
+    /* Variável de cor do rodapé */
+    --footer: linear-gradient(0deg, rgb(65, 63, 119) 0%, rgb(255, 193, 226) 100%);
 }
 
+/* Sem bordas e margens geral */
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 /* -------------------------------------------------------- */
 
 
-/* Cabeçalho/header */
-
-header{
-    grid-area: header;
-    padding: 2rem;
-    background-color: var(--lilac);
+/*--- Cabeçalho/header ---*/
+header.header-logo{
+    padding: 1vw;
+    background: var(--header);
 } 
 
-/*  Container principal */
+/*---  Container principal ---*/
 .container-main {
-    grid-area: principal;
     display: flex;
 }
 
-/* Menu */
+/*------------------------------------------------ Menu -------------------------------------------*/
 
-nav {
+/* Botões do menu */
+.menu-buttons {
+    width: 10vw;
+    height: 1rem;
+    display: inline-flex;
+    justify-content: space-between;
+}
+
+/* Cabeçalho do menu (onde fica infos do usuário) */
+.menu-header{
+    display: inline-flex;
+    width: 15vw;
+    justify-content: space-around;
+    flex-direction: row;
+}
+
+/* Informações do usuário */
+.user-info{
+    width: 100%;
+    margin: 3rem 0 1rem 0;
+    text-align: center;
+}
+
+/* Nome do usuário */
+.user-name {
+    font-weight: 700;
+    color: rgb(205, 248, 255);
+    font-size: 1.1rem;
+    width: 100%;
+}
+
+/* Nível do usuário */
+.user-lvl {
+    color: rgb(205, 248, 255);
+    width: 100%;
+    padding: 0 1rem;
+    font-size: 0.8rem;
+}
+
+
+/* Botões do menu */
+button.menu-button {
+    color: var(--lilac);
+    background-color: transparent;
+    border: none;
+    padding: 0.2;
+}
+
+/* Botão de barra pra abrir o menu */
+button.menu-button.open {
+    margin: 2rem 0 0 2rem;
+    color: var(--mustard);
+}
+
+/* Botão pra fechar o menu */
+.button-close-content {
+    width: 10%;
+    text-align: right;
+}
+
+/* Botão pra fechar  o menu */
+button.menu-button.close {
+    position: absolute;
+    right: 0.3rem;
+    color: rgb(240,240,240);
+
+}
+
+/* Menu  */
+nav#menu {
     position: absolute;
     width: 15vw;
     height: 0;
-    top: 8rem;
+    top: 6.6rem;
+    border-radius: 0.2rem;
     left: 1.8rem;
-    background: var(--tellurite);
+    background: var(--menu);
+    box-shadow: hsla(69, 52%, 48%, 0.856) 0 0 10px 0px;
     transition: 0.5s;
     overflow: hidden;
+    /* border: var(--mustard) 1px solid; */
 }
+ 
 
-nav span {
+nav#menu span {
     height: 0;
 }
 
-nav ul li {
-    padding: 10px 0;
-}
-
 nav ul {
+    width: 100%;
     padding: 8px 0;
     list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+nav ul li {
+    padding: 0.7rem 0;
+    margin: 0 0.2rem;
+    border-top: solid 1px rgba(93, 73, 167, 0.11);
+}
+
+nav ul li:hover {
+    transition: all 0.3s;
+    background: rgba(51, 45, 105, 0.178);
+    font-size: 1.1rem;
+}
+
+nav ul li:hover a {
+    transition: all 0.3s;
+    color: rgba(255, 205, 228, 0.692);
 }
 
 nav ul li a{
     margin: 0 10px;
     transition: 0.3;
+    text-decoration: none;
+    color: rgb(234, 208, 235);
+    font-weight: 600;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
-nav ul {
-    background: var(--tellurite);
-    padding: 8px 0;
-    list-style: none;
+/* O botao do menu dropdown tem de sumir quando a tela tiver mais de 1150pixels  */
+@media (min-width: 1150px) {
+    #show {
+        display: none;
+    }
 }
 
-nav ul li a{
-    margin: 0 10px;
+/* O menu lateral tem de sumir qd a tela tiver menos de 1150 pixels */
+@media (max-width: 1150px) {
+    .menu-open {
+        display: none;
+    }
 }
+
+/*------------------------------------------------------------------------------------------------*/
 
 /* Conteúdo principal */
 main {
-    height: 100vh;
-    width: 100rem;
+    min-height: 35vw;
+    width: 100vw;
     padding: 1rem;
     text-align: center;
     display: flex;
@@ -86,29 +203,58 @@ main {
     justify-content: center;
 }
 
-
-
-/* Parte da tela do jogo game.html */
-
-
-.scenery {
-    width: 70vw;
-    height: 100%;
-    background: url("../teste/cenario.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    background-color: #ddd;
-    contain: content;
+@media (max-width: 1150px) {
+    main {
+        min-height: 60vw;
+        margin: 0;
+        width: 100vw;
+    }
 }
 
 
+/* Parte da tela do jogo game.html */
+.game-container {
+    margin: 0.5rem 0;
+    width: 75vw;
+    height: 40vw;
+    contain: content;
+    object-fit: cover;
+}
+
+@media (max-width: 1150px) {
+    .game-container {
+        width: 100vw;
+        height: 50vh;
+        margin: 0;
+    }
+}
+
+
+/* Imagem do fundo */
+.scenery img {
+    position: absolute;
+    z-index: -2;
+    height: 100%;
+    left: 0;
+    top: 0;
+}
+
+/* Barra de narração */
 .story-container {
-    background-color:crimson;
+    position: absolute;
+    width: 97%;
+    border:  solid 1px hsla(59, 28%, 47%, 0.486);
+    background: var(--button-shine);
+    box-shadow: hsla(12, 87%, 24%, 0.767) 0 0 12px 0px;
+    font-weight: 540;
+    font-size: 1.1rem;
+    color: var(--snow);
+    z-index: 1;
     margin: 1rem;
     padding: 1rem;
     border-radius: 6px;
 }
+
 
 
 .buttons-container {
@@ -116,23 +262,41 @@ main {
     z-index: 7;
     left: 0;
     bottom: 0rem;
-    margin: 1rem;
     display: flexbox;
     flex-direction: row;
-    width: 96%;
+    width: 73vw;
+    margin: 1vw;
 }
 
 .buttons-container button {
     width: 100%;
-    margin: 2px 0;
-    padding: 4px 10px;
+    margin: 0.4rem 0 0 0;
+    padding: 8px 10px;
     text-align: left;
-    background: blueviolet;
+    background: var(--button);
+    font-size: 1.01rem;
+    color: var(--snow);
+    border: solid 1px hsla(287, 28%, 47%, 0.486);
+    box-shadow: hsla(253, 51%, 32%, 0.767) 0 0 12px 0px;
+    border-radius: 0.3rem;
 }
 
+.buttons-container button:hover {
+    transform: scale(1.01);
+    border: solid 1px hsla(184, 76%, 64%, 0.486);
+    box-shadow: hsla(249, 67%, 48%, 0.822) 0 0 12px 0px;
+    transition: all 0.4s ease-in-out;
+
+}
+
+button:focus {
+    border: solid 1px hsla(286, 41%, 54%, 0.336);
+    outline: none;
+}
+ 
 
 
-/* Balão de fala */
+/* Balão de fala */     
 .bubble-container {
     position: absolute;
     width: 17rem;
@@ -142,30 +306,27 @@ main {
     z-index: 4;
 }
 
-#bubble {
-    max-width: 25rem;
+#falas {
+    /* border: rgb(26, 26, 26) 2px solid; */
+    left: 45px;
+    max-width: 28vw;
     padding: 3rem;
     flex-wrap: wrap;
-    background: #fff;
-    position: relative;
+    /* background: rgba(255, 255,255, 0.6); */
+    position: absolute;
     -moz-border-radius: 50%;
     -webkit-border-radius: 50%;
     border-radius: 50%;
     word-wrap: break-word;
-    
+    z-index: 3; 
   }
 
-  #bubble:before {
-    content: "";
-    position: absolute;
-    bottom: 1rem;
-    right: 14rem;
-    height: 25px;
-    width: 30px;
-    border-radius: 80px 100px 100px 160px;
-    box-shadow: 14px 10px 0 0 rgb(255, 255, 255);
+  svg {
+      position: absolute;
+      left: -10%;
+      top: -20px;
+      z-index: 2;
   }
-
 
 .char-container {
     width: 100%;
@@ -180,42 +341,89 @@ main {
 }
 
 #img-personagem-1 {
-    /* position: absolute; */
+    left: 40%;
     z-index: 1;
 }
 
 #img-personagem-2 {
     margin-top: calc(20rem - 2.5rem);
     position: absolute;
-    left: 6rem;
+    right: 100rem;
     z-index: -2;
 }
 
 #img-personagem-3 {
     margin-top: calc(20rem - 2.5rem);
     position: absolute;
-    right: 6rem;
+    right: 0rem;
     z-index: -3;
 }
 
 #img-personagem-4 {
     margin-top: calc(20rem - 5rem);
     position: absolute;
-    left: 30rem;
+    right: 0rem;
     z-index: -4;
 }
 
 #img-personagem-5 {
     margin-top: calc(20rem - 5rem);
     position: absolute;
-    right: 30rem;
+    right: 0rem;
     z-index: -5;
 }
 
 /*  Rodapé/footer */
-footer {
-    grid-area: footer;
-    padding: 2rem;
-    background-color: var(--lilac);
+footer { 
+    bottom: 0;
+    text-align: center;
+    padding: 2rem 0 0 0;
+    background: var(--footer);
 }
 
+footer ul {
+    margin: 1rem 0 1.5rem 0;
+    width: 100%;
+    text-align: center;
+    list-style: none;
+    display: inline-flex;
+    justify-content: center;
+}
+
+footer ul li a {
+    margin: 0 0.3rem;
+    text-decoration: none;
+}
+
+footer ul li a i {
+    color: #BEB0CE;
+}
+
+
+footer small {
+    font-weight: 600;
+}
+
+footer div {
+    padding: 1.3rem;
+    color: var(--snow);
+    /* background: rgb(122, 111, 143); */
+}
+
+.fb:hover {
+    transition: all 0.3s;
+    color: #0047b3;
+    transform: rotate(360deg) scale(1.5);
+}
+
+.site:hover {
+    transition: all 0.3s;
+    color: #ff499e;
+    transform: rotate(360deg) scale(1.5);
+}
+
+.twt:hover {
+    transition: all 0.4s;
+    color: #00a2ff;
+    transform: rotate(360deg) scale(1.5);
+}

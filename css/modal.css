@@ -1,0 +1,88 @@
+.modal-container {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0,0,0,.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2000;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+@keyframes modal {
+    from {
+        opacity: 0;
+        transform: translate3d(0, -60px, 0);
+    }
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+.mostrar .modal-all {
+    animation: modal .3s
+}
+
+.modal-all {
+    position: relative;
+    background-color: rgb(165,154,186);
+    width: 60%;
+    min-width: 300px;
+    padding: 40px;
+    -webkit-box-shadow: -6px -5px 41px -6px rgba(0,0,0,0.75);
+    -moz-box-shadow: -6px -5px 41px -6px rgba(0,0,0,0.75);
+    box-shadow: -6px -5px 41px -6px rgba(0,0,0,0.75);
+    border-radius: 10px;
+    text-align: center;
+    color: #222;
+}
+.modal-all h1 {
+    color: #222;
+}
+.modal-all input[type=email], .modal-all input[type=password], .modal-all input[type=text] {
+    width: 90%;
+    height: 35px;
+    max-width: 450px;
+    margin-bottom: 10px;
+    font-size: 16px;
+    outline: none;
+    background-color: #eee;
+    border: none;
+    border-radius: 10px;
+    padding-left: 10px;
+}
+.modal-all input[type=submit] {
+    width: 90%;
+    height: 35px;
+    max-width: 450px;
+    font-size: 16px;
+    outline: none;
+    border-radius: 10px;
+    background-color: rgb(67,145,161);
+    border: none;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+.modal-all a {
+    font-size: 18px;
+    cursor: pointer;
+}
+.modal-all .close-btn {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+    font-size: 25px;
+    background-color: rgb(100,98,161);
+    color: #eee;
+    border: 5px solid #eee;
+    outline: none;
+    cursor: pointer;
+}
+.modal-container.mostrar {
+    display: flex;
+}
